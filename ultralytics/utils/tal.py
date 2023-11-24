@@ -82,7 +82,7 @@ class TaskAlignedAssigner(nn.Module):
         self.beta = beta
         self.eps = eps
 
-    @torch.no_grad()
+    #@torch.no_grad()
     def forward(self, pd_scores, pd_bboxes, anc_points, gt_labels, gt_bboxes, mask_gt):
         """
         Compute the task-aligned assignment. Reference code is available at

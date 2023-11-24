@@ -238,7 +238,7 @@ class FastSAMPrompt:
             show = cv2.resize(show, (target_width, target_height), interpolation=cv2.INTER_NEAREST)
         ax.imshow(show)
 
-    @torch.no_grad()
+    #@torch.no_grad()
     def retrieve(self, model, preprocess, elements, search_text: str, device) -> int:
         """Processes images and text with a model, calculates similarity, and returns softmax score."""
         preprocessed_images = [preprocess(image).to(device) for image in elements]

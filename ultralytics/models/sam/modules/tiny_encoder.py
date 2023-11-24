@@ -281,7 +281,7 @@ class Attention(torch.nn.Module):
         self.attention_biases = torch.nn.Parameter(torch.zeros(num_heads, len(attention_offsets)))
         self.register_buffer('attention_bias_idxs', torch.LongTensor(idxs).view(N, N), persistent=False)
 
-    @torch.no_grad()
+    #@torch.no_grad()
     def train(self, mode=True):
         """Sets the module in training mode and handles attribute 'ab' based on the mode."""
         super().train(mode)

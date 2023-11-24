@@ -68,7 +68,7 @@ class AutoBackend(nn.Module):
     models across various platforms.
     """
 
-    @torch.no_grad()
+    #@torch.no_grad()
     def __init__(self,
                  weights='yolov8n.pt',
                  device=torch.device('cpu'),

@@ -242,7 +242,7 @@ class RepConv(nn.Module):
                               padding=self.conv1.conv.padding,
                               dilation=self.conv1.conv.dilation,
                               groups=self.conv1.conv.groups,
-                              bias=True).requires_grad_(False)
+                              bias=True).requires_grad_(True)
         self.conv.weight.data = kernel
         self.conv.bias.data = bias
         for para in self.parameters():

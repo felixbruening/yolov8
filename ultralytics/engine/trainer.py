@@ -219,7 +219,7 @@ class BaseTrainer:
             # v.register_hook(lambda x: torch.nan_to_num(x))  # NaN to 0 (commented for erratic training results)
             if any(x in k for x in freeze_layer_names):
                 LOGGER.info(f"Freezing layer '{k}'")
-                v.requires_grad = False
+                v.requires_grad = True
             elif not v.requires_grad:
                 LOGGER.info(f"WARNING ⚠️ setting 'requires_grad=True' for frozen layer '{k}'. "
                             'See ultralytics.engine.trainer for customization of frozen layers.')

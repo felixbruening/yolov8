@@ -457,7 +457,7 @@ def strip_optimizer(f: Union[str, Path] = 'best.pt', s: str = '') -> None:
     x['epoch'] = -1
     x['model'].half()  # to FP16
     for p in x['model'].parameters():
-        p.requires_grad = False
+        p.requires_grad = True
     x['train_args'] = {k: v for k, v in args.items() if k in DEFAULT_CFG_KEYS}  # strip non-default keys
     # x['model'].args = x['train_args']
     torch.save(x, s or f)

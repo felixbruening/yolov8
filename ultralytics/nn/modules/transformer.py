@@ -241,8 +241,8 @@ class MSDeformAttn(nn.Module):
             1, self.n_levels, self.n_points, 1)
         for i in range(self.n_points):
             grid_init[:, :, i, :] *= i + 1
-        with torch.no_grad():
-            self.sampling_offsets.bias = nn.Parameter(grid_init.view(-1))
+        # with torch.no_grad():
+        self.sampling_offsets.bias = nn.Parameter(grid_init.view(-1))
         constant_(self.attention_weights.weight.data, 0.)
         constant_(self.attention_weights.bias.data, 0.)
         xavier_uniform_(self.value_proj.weight.data)

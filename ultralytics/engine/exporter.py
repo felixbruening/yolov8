@@ -194,7 +194,7 @@ class Exporter:
         # Update model
         model = deepcopy(model).to(self.device)
         for p in model.parameters():
-            p.requires_grad = False
+            p.requires_grad = True
         model.eval()
         model.float()
         model = model.fuse()
